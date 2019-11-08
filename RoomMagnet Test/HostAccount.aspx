@@ -133,10 +133,11 @@
                     <small id="emailHelp" class="form-text text-muted">*We will never share your email with anyone else.</small>
                 </div>
                 <asp:RequiredFieldValidator ID="passwordReqField" Display ="Dynamic" runat="server" ErrorMessage="Please enter a password." ControlToValidate="txtPassword" Text="*Please enter a password"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="passwordRegExpValidator" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="txtPassword" Text='*Please enter a password that contains one uppercase letter, one lowercase letter, one number, and one special character (!"#$%&) and is between 8-15 characters long.') and is between 8-15 characters long." ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$"></asp:RegularExpressionValidator>
                 <div class="form-group">
                     <label for="txtPassword">Password</label>
                     <%--for testing purposes--%>
-                    <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password" TextMode ="Password" MaxLength="256"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Enter a password that contains one uppercase letter, one lowercase letter, one number, and one special character (!#$%&)" TextMode ="Password" MaxLength="256"></asp:TextBox>
                 </div>
 
                 <div class="form-group form-check">
